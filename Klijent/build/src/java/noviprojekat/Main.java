@@ -35,6 +35,7 @@ public class Main {
     public static void main(String[] args) {
        context = connectionFactory.createContext();
        producer = context.createProducer();
+       Refresher r = new Refresher();
        k = new Klijent();
        emf = Persistence.createEntityManagerFactory("PU");
        em = emf.createEntityManager();

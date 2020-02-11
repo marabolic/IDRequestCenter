@@ -53,7 +53,6 @@ public class Klijent {
         dr.setPol(gui.getPol());
         dr.setBracnoStanje(gui.getBracnoStanje());
         dr.setDatumRodjenja(gui.getDatum());
-
         dr.setStatus("kreiran");
        
         return dr;
