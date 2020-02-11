@@ -126,12 +126,75 @@ public class Klijent {
     }
    
     
-    public void statusRequest(String id){
-        
+    public String statusRequest(String id) throws ProtocolException{
+        List<Documentrequest> doc = Main.em.createNamedQuery("Documentrequest.findById", Documentrequest.class).setParameter("id", id).getResultList();
+        String ret = "";
+       
+        if (doc.size() > 0){ //exists in local database
+            Documentrequest dr = doc.get(0);
+            if (dr.getStatus().equals("kreiran")){
+                ret = "kreiran";
+               
+            }
+            if (dr.getStatus().equals("uProdukciji")){
+                ret = "uProdukciji";
+                try {
+                    String termin =  "http://collabnet.netset.rs:8081/is/persoCentar/" + id;
+                    
+
+                    URL url = new URL(termin);
+                    HttpURLConnection con = (HttpURLConnection)url.openConnection();
+                    con.setRequestMethod("GET");
+                    
+                    int respCode = con.getResponseCode();
+                    if (respCode == 200){
+                        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                        JsonReader reader = Json.createReader(in); 
+                
+                        JSONParser par = new JSONParser();
+                        JSONObject obj = (JSONObject)par.parse(in);
+
+                       
+                        if (obj.get("status").equals("proizveden")){
+                            Main.em.getTransaction().begin();
+                            dr.setStatus("proizveden");
+                            Main.em.flush();
+                            Main.em.getTransaction().commit();
+                            gui.setDeliverEnable(true);
+                            ret = "proizveden";
+                        }
+                        else{
+                            gui.setDeliverEnable(false);
+                        }
+                    }
+                    
+                } catch (MalformedURLException ex) {
+                    Logger.getLogger(Klijent.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(Klijent.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ParseException ex) {
+                    Logger.getLogger(Klijent.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            }
+            ret = dr.getStatus();
+            if (ret.equals("proizveden")){
+                gui.setDeliverEnable(true);
+            }
+        }
+        return ret;
     }
     
-    public void deliver(){
-        
+    public void deliver(String id){
+         List<Documentrequest> doc = Main.em.createNamedQuery("Documentrequest.findById", Documentrequest.class).setParameter("id", id).getResultList();
+         if (doc.size() > 0){ 
+            Documentrequest dr = doc.get(0);
+            Main.em.getTransaction().begin();
+            dr.setStatus("urucen");
+            Main.em.flush();
+            Main.em.getTransaction().commit();
+            gui.setDeliverEnable(false);
+         }
     }
     
     

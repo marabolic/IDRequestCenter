@@ -26,11 +26,8 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="statusRequestBtn" min="-2" pref="110" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="deliverBtn" min="-2" pref="100" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -49,36 +46,51 @@
                           <Component id="requestBtn" min="-2" pref="118" max="-2" attributes="0"/>
                           <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jbmgTxt" alignment="0" pref="67" max="32767" attributes="0"/>
-                              <Component id="imeTxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="prezimeTxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="imeMajkeTxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="imeOcaTxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="prezMajkeTxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="prezOcaTxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="profTxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="nacTxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="ulicaTxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="brojTxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="opstinaTxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="bracnoStanjeComboBox" alignment="0" pref="96" max="32767" attributes="0"/>
-                              <Component id="polComboBox" alignment="0" max="32767" attributes="0"/>
-                              <Component id="idStatusTxt" max="32767" attributes="0"/>
-                          </Group>
                           <Group type="102" attributes="0">
-                              <Component id="danTxt" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="mesecTxt" min="-2" pref="30" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="godinaTxt" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jbmgTxt" alignment="0" pref="67" max="32767" attributes="0"/>
+                                      <Component id="imeTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="prezimeTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="imeMajkeTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="imeOcaTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="prezMajkeTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="prezOcaTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="profTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="nacTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="ulicaTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="brojTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="opstinaTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="bracnoStanjeComboBox" alignment="0" pref="96" max="32767" attributes="0"/>
+                                      <Component id="polComboBox" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="danTxt" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="mesecTxt" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="godinaTxt" min="-2" pref="40" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="idIspisLb" min="-2" max="-2" attributes="0"/>
+                                  <Component id="idStatusTxt" min="-2" pref="96" max="-2" attributes="0"/>
+                                  <Component id="statusIspisLb" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="statusRequestBtn" min="-2" pref="110" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="deliverBtn" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="82" max="32767" attributes="0"/>
@@ -167,18 +179,27 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="requestBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="65" max="32767" attributes="0"/>
-              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="idStatusTxt" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="idIspisLb" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="statusIspisLb" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="statusRequestBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="deliverBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -344,6 +365,15 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deliverBtnActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel18">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Za id:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="idIspisLb">
+    </Component>
+    <Component class="javax.swing.JLabel" name="statusIspisLb">
     </Component>
   </SubComponents>
 </Form>
