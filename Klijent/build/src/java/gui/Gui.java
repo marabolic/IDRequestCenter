@@ -145,12 +145,17 @@ public class Gui extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        requestBtn = new javax.swing.JButton();
         polComboBox = new javax.swing.JComboBox<>();
         bracnoStanjeComboBox = new javax.swing.JComboBox<>();
         danTxt = new javax.swing.JTextField();
         mesecTxt = new javax.swing.JTextField();
         godinaTxt = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        idStatusTxt = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        statusRequestBtn = new javax.swing.JButton();
+        deliverBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -184,10 +189,28 @@ public class Gui extends javax.swing.JFrame {
 
         jLabel15.setText("datum rodjenja:");
 
-        jButton1.setText("kreiraj zahtev");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        requestBtn.setText("kreiraj zahtev");
+        requestBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                requestBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setText("Status:");
+
+        jLabel17.setText("ID:");
+
+        statusRequestBtn.setText("Trazi Status");
+        statusRequestBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statusRequestBtnActionPerformed(evt);
+            }
+        });
+
+        deliverBtn.setText("Uruci");
+        deliverBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deliverBtnActionPerformed(evt);
             }
         });
 
@@ -198,46 +221,55 @@ public class Gui extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel13)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jbmgTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
-                        .addComponent(imeTxt)
-                        .addComponent(prezimeTxt)
-                        .addComponent(imeMajkeTxt)
-                        .addComponent(imeOcaTxt)
-                        .addComponent(prezMajkeTxt)
-                        .addComponent(prezOcaTxt)
-                        .addComponent(profTxt)
-                        .addComponent(nacTxt)
-                        .addComponent(ulicaTxt)
-                        .addComponent(brojTxt)
-                        .addComponent(opstinaTxt)
-                        .addComponent(bracnoStanjeComboBox, 0, 96, Short.MAX_VALUE)
-                        .addComponent(polComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(danTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(statusRequestBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(deliverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel13)
+                            .addComponent(requestBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mesecTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(godinaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(75, 77, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jbmgTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                                .addComponent(imeTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(prezimeTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(imeMajkeTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(imeOcaTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(prezMajkeTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(prezOcaTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(profTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(nacTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ulicaTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(brojTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(opstinaTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(bracnoStanjeComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 96, Short.MAX_VALUE)
+                                .addComponent(polComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(idStatusTxt))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(danTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mesecTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(godinaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,16 +337,33 @@ public class Gui extends javax.swing.JFrame {
                     .addComponent(mesecTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(godinaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addComponent(requestBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addComponent(jLabel16)
+                .addGap(2, 2, 2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(idStatusTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(statusRequestBtn)
+                    .addComponent(deliverBtn)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void requestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestBtnActionPerformed
         k.createRequest();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_requestBtnActionPerformed
+
+    private void deliverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliverBtnActionPerformed
+        
+    }//GEN-LAST:event_deliverBtnActionPerformed
+
+    private void statusRequestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusRequestBtnActionPerformed
+        k.statusRequest(idStatusTxt.getText());
+    }//GEN-LAST:event_statusRequestBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -355,11 +404,12 @@ public class Gui extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> bracnoStanjeComboBox;
     private javax.swing.JTextField brojTxt;
     private javax.swing.JTextField danTxt;
+    private javax.swing.JButton deliverBtn;
     private javax.swing.JTextField godinaTxt;
+    private javax.swing.JTextField idStatusTxt;
     private javax.swing.JTextField imeMajkeTxt;
     private javax.swing.JTextField imeOcaTxt;
     private javax.swing.JTextField imeTxt;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -367,6 +417,8 @@ public class Gui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -384,6 +436,8 @@ public class Gui extends javax.swing.JFrame {
     private javax.swing.JTextField prezOcaTxt;
     private javax.swing.JTextField prezimeTxt;
     private javax.swing.JTextField profTxt;
+    private javax.swing.JButton requestBtn;
+    private javax.swing.JButton statusRequestBtn;
     private javax.swing.JTextField ulicaTxt;
     // End of variables declaration//GEN-END:variables
 }

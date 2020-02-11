@@ -27,15 +27,12 @@ import org.json.simple.parser.ParseException;
 public class Klijent {
     Gui gui;
     
-    @Resource(lookup = "jms/__defaultConnectionFactory")
-    static ConnectionFactory connectionFactory;
-    @Resource(lookup = "myQueue")
-    static Queue queue;
-    static JMSContext context;
-    static JMSProducer producer;
+   
     
     public Klijent(){
+       
         gui = new Gui(this);
+       
     }
     
     
@@ -100,13 +97,18 @@ public class Klijent {
 
         
         List<String> maxID = Main.em.createQuery("select max(d.id) from Documentrequest d").getResultList();
+        long maxint;
+        if (maxID.get(0) != null) {
+            maxint = Math.max(Long.parseLong(maxID.get(0)), 171170000050l);
+        }
+        else maxint = 171170000040l;
+        
+        
         System.out.println("max ID:" + maxID.get(0));
         
         
-        String id = maxID.get(0);
-        long intid = Long.parseLong(id);
-        intid++;
-        id = intid + "";
+        maxint++;
+        String id = maxint + "";
         System.out.println("myID: " + id);
         
         Documentrequest dr = createRequestObject(id);
@@ -117,13 +119,18 @@ public class Klijent {
         Main.em.getTransaction().commit();
         
         
-        ObjectMessage msg = context.createObjectMessage(dr);
-        producer.send(queue, msg);
+       
+        ObjectMessage msg = Main.context.createObjectMessage(dr);
+        Main.producer.send(Main.queue, msg);
         
     }
    
     
-    void statusRequest(){
+    public void statusRequest(String id){
+        
+    }
+    
+    public void deliver(){
         
     }
     
