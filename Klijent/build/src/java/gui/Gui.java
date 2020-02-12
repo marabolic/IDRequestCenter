@@ -111,6 +111,10 @@ public class Gui extends javax.swing.JFrame {
         return danTxt.getText() + "-" + mesecTxt.getText() + "-" + godinaTxt.getText();
     }
     
+    
+    public void doClickStatus(){
+        statusRequestBtn.doClick();
+    }
    
     public void setDeliverEnable(boolean flag){
         deliverBtn.setEnabled(flag);

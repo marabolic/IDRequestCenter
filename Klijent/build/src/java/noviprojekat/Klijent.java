@@ -118,7 +118,7 @@ public class Klijent {
         Main.em.getTransaction().commit();
         
         
-       
+        dr.setStatus("uProdukciji");
         ObjectMessage msg = Main.context.createObjectMessage(dr);
         Main.producer.send(Main.queue, msg);
         
@@ -131,12 +131,8 @@ public class Klijent {
        
         if (doc.size() > 0){ //exists in local database
             Documentrequest dr = doc.get(0);
-            if (dr.getStatus().equals("kreiran")){
-                ret = "kreiran";
-               
-            }
+            
             if (dr.getStatus().equals("uProdukciji")){
-                ret = "uProdukciji";
                 try {
                     String termin =  "http://collabnet.netset.rs:8081/is/persoCentar/" + id;
                     
@@ -160,7 +156,6 @@ public class Klijent {
                             Main.em.flush();
                             Main.em.getTransaction().commit();
                             gui.setDeliverEnable(true);
-                            ret = "proizveden";
                         }
                         else{
                             gui.setDeliverEnable(false);
